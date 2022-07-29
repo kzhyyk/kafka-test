@@ -25,6 +25,14 @@
   </pluginRepositories>
 
   <dependencies>
+
+<!--    <dependency>-->
+<!--      <groupId>org.scala-tools</groupId>-->
+<!--      <artifactId>maven-scala-plugin</artifactId>-->
+<!--      <version>2.13</version>-->
+<!--    </dependency>-->
+
+
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
@@ -36,6 +44,23 @@
       <version>4.4</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- https://mavenlibs.com/maven/dependency/org.scala-lang.modules/scala-xml_2.13 -->
+    <dependency>
+      <groupId>org.scala-lang.modules</groupId>
+      <artifactId>scala-xml_2.13</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+
+
+    <!-- https://mavenlibs.com/maven/dependency/com.typesafe.akka/akka-actor-typed_2.13 -->
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-actor-typed_2.13</artifactId>
+      <version>2.6.19</version>
+    </dependency>
+
+
     <dependency>
       <groupId>org.specs</groupId>
       <artifactId>specs</artifactId>
@@ -49,18 +74,21 @@
     </dependency>
 
 
+    <!-- https://mavenlibs.com/maven/dependency/org.slf4j/slf4j-simple -->
     <dependency>
-      　　<groupId>org.slf4j</groupId>
-      　　<artifactId>slf4j-simple</artifactId>
-      　　<version>1.7.25</version>
-      　　<scope>compile</scope>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.25</version>
     </dependency>
+
   </dependencies>
 
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
     <plugins>
+
+
       <plugin>
         <groupId>org.scala-tools</groupId>
         <artifactId>maven-scala-plugin</artifactId>
@@ -83,6 +111,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-eclipse-plugin</artifactId>
         <configuration>
+<!--          <source>${java.version}</source>-->
           <downloadSources>true</downloadSources>
           <buildcommands>
             <buildcommand>ch.epfl.lamp.sdt.core.scalabuilder</buildcommand>
@@ -100,6 +129,12 @@
   </build>
   <reporting>
     <plugins>
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-resources-plugin</artifactId>-->
+<!--        <version>4.0.0</version>-->
+<!--      </plugin>-->
+
       <plugin>
         <groupId>org.scala-tools</groupId>
         <artifactId>maven-scala-plugin</artifactId>
