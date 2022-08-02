@@ -73,8 +73,29 @@
       <version>1.0.2</version>
     </dependency>
 
+      <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpclient</artifactId>
+          <version>4.5.5</version>
+      </dependency>
 
-    <!-- https://mavenlibs.com/maven/dependency/org.slf4j/slf4j-simple -->
+      <dependency>
+          <groupId>com.github.ghostdogpr</groupId>
+          <artifactId>readability4s</artifactId>
+          <version>1.0.9</version>
+      </dependency>
+
+
+      <!-- https://mvnrepository.com/artifact/org.scalaj/scalaj-http -->
+      <dependency>
+          <groupId>org.scalaj</groupId>
+          <artifactId>scalaj-http_2.13</artifactId>
+          <version>2.4.2</version>
+      </dependency>
+
+
+
+      <!-- https://mavenlibs.com/maven/dependency/org.slf4j/slf4j-simple -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
