@@ -1,6 +1,8 @@
 package org.example
 
 
+import java.time.LocalTime
+
 import scala.annotation.tailrec
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -33,6 +35,14 @@ object FutureIn extends App {
   }
 //  等待所有任务执行完
   sleep(8000)
+
+  Future{
+    Thread.sleep(1000)
+    println(s"future:${LocalTime.now}")
+  }
+  println(s"now:${LocalTime.now}")
+
+
 
 
 //  偏函数
