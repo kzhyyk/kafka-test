@@ -26,31 +26,24 @@ object Base extends App {
     println(s"l2:$x")
 
 
+//  传值与传名调用
+  def time() = {
+    println("获取时间")
+    System.nanoTime
+  }
+//  传名调用，再函数内部计算。可以认为传入了一个表达式，在调用时才会执行
+  def delayed(t: => Long) = {
+    println("delayed:")
+    println(t)
+  }
+//  传值调用，先计算再应用。提高效率。()=>Long一样
+  def byvalue(t:Long) = {
+    println("byvalue")
+    println(t)
+  }
+  delayed(time())
+  byvalue(time())
 
-  //最开始拥有的软妹币
-  var money = 10
-  //每天喝掉一个软妹币
-  def drink: Unit = {
-    money -= 1
-  }
-  //数钱时要算上被喝掉的软妹币
-  def count: Int = {
-    drink
-    money
-  }
-  //每天都数钱
-  def printByName(x: => Int): Unit = {
-    for(i <- 0 until 5)
-      println("每天算一算，酒鬼还剩" + x + "块钱！")
-  }
-  //第一天数一下记墙上，以后每天看墙上的余额
-  def printByValue(x: Int): Unit = {
-    for(i <- 0 until 5)
-      println("只算第一天，酒鬼还剩" + x + "块钱！")
-  }
-
-  printByName(count)
-  printByValue(count)
 
 
 
