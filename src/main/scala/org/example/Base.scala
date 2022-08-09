@@ -44,10 +44,30 @@ object Base extends App {
   delayed(time())
   byvalue(time())
 
+//  匿名函数
+  val value = List(1, 2, 3)
+  val doublevalue = value.map(_ * 2)
+  //_ * 2就是一个匿名函数，_表示传递给此函数的参数
+  println(s"doublevalue:$doublevalue")
+
+  val ji = (x: Int, y: Int) => x * y
+  println("积：" + ji(2, 3))
 
 
 
-//  新建txt文件
+
+//  闭包
+//  (y: Int) => x - y 这是一个匿名函数，使用了函数外的x
+  def minusxy(x: Int) = (y: Int) => x - y
+  //f函数就是闭包.
+  val f = minusxy(20)
+  println("f(1)=" + f(1)) // 19
+  println("f(2)=" + f(2)) // 18
+
+
+
+
+  //  新建txt文件
 //  scala不支持三元表达式
   val configFile = new File("test1.txt")
   val configFilePath = if (configFile.exists){
