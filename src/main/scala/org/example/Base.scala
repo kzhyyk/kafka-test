@@ -69,6 +69,13 @@ object Base extends App {
   val counter: Int => Int = {value => value + 1 }
   println(counter(100))
 
+//  规约
+  val l = List(1, 2, 3, 5)
+  println(l.reduceLeft(_ - _))
+  println(l.reduceRight(_ - _))
+//  折叠,有一个种子值
+  println(l.fold(1)(_ * _))
+  println(l.fold(0)(_ + _))
 
 
   //  新建txt文件
