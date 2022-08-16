@@ -56,7 +56,7 @@ object Base extends App {
 
 
 
-//  闭包
+//  闭包。闭包反应了一个从开放到封闭的过程
 //  (y: Int) => x - y 这是一个匿名函数，使用了函数外的x
   def minusxy(x: Int) = (y: Int) => x - y
   //f函数就是闭包.
@@ -64,6 +64,10 @@ object Base extends App {
   println("f(1)=" + f(1)) // 19
   println("f(2)=" + f(2)) // 18
 
+
+//  函数字面量
+  val counter: Int => Int = {value => value + 1 }
+  println(counter(100))
 
 
 
