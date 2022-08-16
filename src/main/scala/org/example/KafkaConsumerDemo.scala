@@ -1,12 +1,13 @@
 package org.example
 import java.util.{Collections, Properties}
+
 import org.apache.kafka.clients.consumer.{ConsumerRecords, KafkaConsumer}
 
 object KafkaConsumerDemo {
   def main(args: Array[String]): Unit = {
     // 配置信息
     val prop = new Properties
-    prop.put("bootstrap.servers", "192.168.137.135:9092")
+    prop.put("bootstrap.servers", "192.168.3.41:9092")
     // 指定消费者组
     prop.put("group.id", "group01")
     // 指定消费位置: earliest(从起始位置读取分区记录)/latest(从最新的位置开始), 在读取一个没有偏移量的分区或者偏移量无效的情况下如何处理
@@ -21,7 +22,7 @@ object KafkaConsumerDemo {
     // 得到Consumer实例
     val kafkaConsumer = new KafkaConsumer[String, String](prop)
     // 首先需要订阅topic
-//    kafkaConsumer.subscribe(Collections.singletonList("test1"))
+    kafkaConsumer.subscribe(Collections.singletonList("test2"))
 //    kafkaConsumer subscribe "test.*"
 //    kafkaConsumer subscribe "test1"
 
