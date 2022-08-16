@@ -38,7 +38,7 @@ object Future2 extends App {
   }
 
   val f1 = Future{ getData1() }
-  val f2 = Future{ getData2() } recover{ case e: Exception => 0 }
+  val f2 = Future{ getData2() } //recover{ case e: Exception => 0 }
 //  println(s"f1:$f1")
 //  val combined = f1.flatMap(n1 => f2.map(n2 => n1 + n2))
 //  println(s"combined:$combined")

@@ -79,6 +79,14 @@
           <version>4.5.5</version>
       </dependency>
 
+
+      <!-- https://mvnrepository.com/artifact/org.platanios/tensorflow-api -->
+      <dependency>
+          <groupId>org.platanios</groupId>
+          <artifactId>tensorflow-api_2.13</artifactId>
+          <version>0.6.5</version>
+      </dependency>
+
       <dependency>
           <groupId>com.github.ghostdogpr</groupId>
           <artifactId>readability4s</artifactId>
@@ -124,7 +132,7 @@
         <configuration>
           <scalaVersion>${scala.version}</scalaVersion>
           <args>
-            <arg>-target:jvm-1.8</arg>
+            <arg>-target:jvm-11</arg>
           </args>
         </configuration>
       </plugin>
